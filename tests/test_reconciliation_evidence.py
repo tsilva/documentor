@@ -24,6 +24,7 @@ class ReconciliationEvidenceTests(unittest.TestCase):
             "invoice": SUPPLIER_EVIDENCE,
             "receipt": SUPPLIER_EVIDENCE,
             "invoice-receipt": SUPPLIER_EVIDENCE,
+            "insurance-notice": SUPPLIER_EVIDENCE,
             "tax-irs": TAX_EVIDENCE,
             "payroll-social": PAYROLL_EVIDENCE,
             "payroll-salary": PAYROLL_EVIDENCE,
@@ -56,6 +57,7 @@ class ReconciliationEvidenceTests(unittest.TestCase):
     def test_counterparty_aliases_use_tax_number_when_known(self):
         self.assertEqual(counterparty_id({"issuer_tax_number": "504656767"}), "via-verde")
         self.assertEqual(counterparty_id({"issuer_tax_number": "IE9825613N"}), "google")
+        self.assertEqual(counterparty_id({"issuer_tax_number": "500069514"}), "allianz")
         self.assertEqual(counterparty_id({"issuer_tax_number": "999999999"}), "tax:PT999999999")
 
     def test_document_type_matches_family_aliases(self):

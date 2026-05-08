@@ -48,6 +48,7 @@ _SUPPLIER_TYPES = {
     "invoice-receipt",
     "invoice-credit",
     "invoice-debit",
+    "insurance-notice",
     "bank-fees",
 }
 _INVESTMENT_TYPES = {
@@ -88,6 +89,11 @@ _COUNTERPARTY_ALIASES = {
     "vodafone": "vodafone",
     "vodafoneportugal": "vodafone",
     "vodafoneportugalcomunicacoespessoais": "vodafone",
+    "500069514": "allianz",
+    "pt500069514": "allianz",
+    "allianz": "allianz",
+    "companhiadesegurosallianzportugal": "allianz",
+    "companhiadesegurosallianzportugalsa": "allianz",
     "503782467": "melo-nadais",
     "pt503782467": "melo-nadais",
     "melonadais": "melo-nadais",
