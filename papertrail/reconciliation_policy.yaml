@@ -1,5 +1,6 @@
 amount_tolerance: 0.01
 date_window_days: 30
+tax_number_default_country_prefix: PT
 bank_generated_doc_types:
   - bank-card-transaction
   - bank-note
@@ -29,6 +30,32 @@ supporting_doc_type_patterns:
   - insurance-notice
   - receipt-reference
   - receipt-delivery
+document_families:
+  bank_anchor:
+    aliases: [bank-anchor, bank_anchor]
+    types: [bank-note, bank-transfer, bank-card-transaction]
+  supplier_evidence:
+    aliases: [supplier-evidence, supplier_evidence]
+    types: [invoice, receipt, invoice-receipt, invoice-credit, invoice-debit, insurance-notice, bank-fees]
+    prefixes: [invoice-, receipt-]
+    ignore_when_zero_amount: true
+  tax_evidence:
+    aliases: [tax-evidence, tax_evidence]
+    prefixes: [tax-]
+  payroll_evidence:
+    aliases: [payroll-evidence, payroll_evidence]
+    prefixes: [payroll-]
+  loan_evidence:
+    aliases: [loan-evidence, loan_evidence]
+    prefixes: [loan-]
+  investment_evidence:
+    aliases: [investment-evidence, investment_evidence]
+    types: [bank-investment, investment-acquisition-summary, bank-stock-buy, bank-stock-sell]
+  contract_evidence:
+    aliases: [contract-evidence, contract_evidence]
+    types: [contract-signup]
+  ignore:
+    types: [investment-key-information-document, loan-simulation]
 bank_counterparties: [bpi, millennium-bcp]
 counterparty_aliases:
   "501525882": millennium-bcp
