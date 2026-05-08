@@ -60,6 +60,15 @@ class ReconciliationEvidenceTests(unittest.TestCase):
         self.assertEqual(counterparty_id({"issuer_tax_number": "500069514"}), "allianz")
         self.assertEqual(counterparty_id({"issuer_tax_number": "999999999"}), "tax:PT999999999")
 
+    def test_counterparty_aliases_can_be_extended_by_policy(self):
+        self.assertEqual(
+            counterparty_id(
+                {"issuing_party": "Acme, Lda."},
+                counterparty_aliases={"Acme Lda": "acme"},
+            ),
+            "acme",
+        )
+
     def test_document_type_matches_family_aliases(self):
         self.assertTrue(document_type_matches_family("invoice-receipt", "supplier-evidence"))
         self.assertTrue(document_type_matches_family("bank-transfer", "bank-anchor"))
