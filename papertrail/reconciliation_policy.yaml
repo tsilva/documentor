@@ -127,6 +127,10 @@ shared_period_supplier_evidence_error_exempt_rule_names: [supplier-payment]
 shared_period_bank_anchor_error_exempt_rule_names: [supplier-payment]
 evidence_counterparty_categories: [supplier-payment, bank-fee]
 evidence_counterparty_required_pattern: invoice
+evidence_counterparty_skip_if_supplier_present_categories: [supplier-payment, bank-fee]
+evidence_counterparty_amount_optional_categories: [bank-fee]
+default_currency: EUR
+llm_default_confidence: 0.5
 line_item_category_aliases:
   bank-fee:
     prefixes: [bank-fee]
